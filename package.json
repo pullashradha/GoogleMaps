@@ -8,6 +8,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "bower": "^1.7.9",
     "bower-files": "^3.13.3",
     "browser-sync": "^2.14.0",
     "browserify": "^13.1.0",
@@ -23,9 +24,6 @@
   "repository": {
     "type": "git",
     "url": "git+"
-  },
-  "bugs": {
-    "url": ""
   },
   "homepage": "",
   "description": ""
