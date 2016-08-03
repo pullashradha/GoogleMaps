@@ -35,12 +35,12 @@ function geolocationError(positionError) {
 }
 
 //Destination Functions
-function destinationSuccess(destination) {
-  var destinationLatLng = new google.maps.LatLng(destination.coords.latitude, destination.coords.longitude);
-  console.log(destinationLatLng);
+function destinationSuccess(destinationLat, destinationLng) {
+  var destinationLat = new google.maps.Lat(destinationLat.coords.latitude);
+  var destinationLng = new google.maps.Lng(destinationLng.coords.longitude)
   var myOptions = {
     zoom : 16,
-    center : destinationLatLng,
+    center : destinationLat, destinationLng,
     mapTypeId : google.maps.MapTypeId.ROADMAP
   };
   var mapObject = new google.maps.Map(document.getElementById("showMap"), myOptions);
@@ -85,8 +85,21 @@ function locateDestination() {
 $(document).ready(function() {
   $("#userLocation").click(locateUser);
   $("#userDestination-btn").click(function(){
-    var destination = $("#userDestination").val();
-    var destinationResult = locateDestination(destination);
-    // $("#printout").show(destinationResult);
+    var destinationLat = $("#userDestinationLat").val();
+    var destinationLng = $("#userDestinationLng").val();
+    var destinationResult = destinationSuccess(destinationLat, destinationLng);
   });
 });
+// $(document).ready(function() {
+//   $("#userLocation").on('click', locateUser);
+//   $("#userDestination-btn").click(function(){
+//     var destination = $("#userDestination").val();
+//     var destinationResult = locateDestination(destination);
+//     // $("#printout").show(destinationResult);
+//   });
+// });
+//
+// $(".number").on('click', {number : 4}, printNumber);
+// function printNumber(event){
+//    console.log(event.data.number); // 4
+// }
