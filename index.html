@@ -9,12 +9,24 @@
     <title>Google Maps Test</title>
   </head>
   <body>
-    <h1 class="page-header">Google Maps</h1>
+    <h1 class="page-header">Get Me to a Dev Meetup</h1>
     <form id="directions-form" class="form-group">
       <h2>From where?<input id="origin-input" type="text" class="form-control"></h2>
-      <h2>To where?<input id="destination-input" type="text" class="form-control"></h2>
-      <button id="submit-btn" type="submit" class="btn btn-success">Submit</button>
-    </form>
-    <div id="showMap"></div>
-  </body>
-</html>
+      <h2>To where?
+        <select id="destination-input">
+          <option value="200 SW Market Street, Portland, OR">The Journey from ER Modeler to Data Scientist + The Basics of Text Analytics</option>
+          <option value="2728 SE Ankeny St. Portland, OR 97214">Ruby Coworking</option>
+          <option value="1355 Northwest Everett Street, Portland, OR 97209">CENTRL Office First Thursday with Base Camp Brewing</option>
+          <option value="2626 SW Corbett Ave, Portland, OR">Frontend Peer Mentoring</option>
+          <option value="308 SW 2nd Ave Fifth Floor, Portland, OR">Getting Declarative with Cats and Promesa w/ Matthew Lyon</option>
+          <option value="920 SW Third Ave. Floor 2, Portland, OR">Emacs Hack Night</option>
+          <option value="1930 SW 4th Avenue, Portland, OR">Portland Linux/Unix Group: Designing chips on GNU/Linux</option>
+          <option value="322 NW 6th Avenue, Suite 200 Portland, OR">First Fridays Free Days and Five-Year Anniversary (and 200th Calagator event)</option>
+          <option value="1332 W Burnside St, Portland, Oregon">AgilePDX Dntn Pub Lunch: Report Back: Bringing the Team to the Work</option>
+          <option value="310 SW 4th Ave, Suite 330 Portland, OR">The Tech Academy Tech Talk with Mike Griffin Director of IT Security at Circle K</option>
+        </select></h2>
+        <button id="submit-btn" type="submit" class="btn btn-success btn-block">Submit</button>
+      </form>
+      <div id="showMap"></div>
+    </body>
+    </html>
