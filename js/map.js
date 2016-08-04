@@ -20,6 +20,20 @@ var createMap = function(cityInput) {
       alert("Geocode was not successful for the following reason: " + status);
     }
   });
-}
+  var request = {
+    destination: {lat: 39.79, lng: -86.14},
+    origin: cityInput,
+    travelMode: "DRIVING"
+  };
+  var directionsDisplay = new google.maps.DirectionsRenderer({
+    map: map
+  });
+  var directionsService = new google.maps.DirectionsService();
+  directionsService.route(request, function(response, status) {
+    if (status == "OK") {
+      directionsDisplay.setDirections(response);
+    }
+  });
+};
 
 exports.mapModule = createMap;
