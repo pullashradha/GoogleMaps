@@ -9,17 +9,22 @@ h1 {
 
 form {
   margin-top: 75px;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+form select {
+  margin-bottom: 30px;
 }
 
 #submit-btn {
-  font-size: 15pt;
+  font-size: 18pt;
   margin-bottom: 75px;
 }
 
 #showMap {
   width: 100%;
   height: 500px;
-  background-color: grey;
+  background-color: #A9A9A9;
+  background: rgba(0,0,0,0.25);
 }

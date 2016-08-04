@@ -10,8 +10,6 @@ var createMap = function(originInput, destinationInput) {
   // Update center of map based on inputted city name
   var geocoder = new google.maps.Geocoder();
   geocoder.geocode( {"address": originInput}, {"address": destinationInput},function(results, status) {
-console.log(originInput);
-console.log(destinationInput);
     if (status === "OK") {
       map.setCenter(originInput);
       var marker = new google.maps.Marker({
