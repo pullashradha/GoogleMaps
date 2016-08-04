@@ -1,9 +1,10 @@
 var createMap = require("./../js/map.js").mapModule;
 
 $(document).ready(function(event) {
-  $("#city-form").submit(function(event) {
+  $("#directions-form").submit(function(event) {
     event.preventDefault();
-    var cityInput = $("#city-name").val();
-    createMap(cityInput);
+    var originInput = $("#origin-input").val();
+    var destinationInput = $("#destination-input").val();
+    createMap(originInput, destinationInput);
   });
 });

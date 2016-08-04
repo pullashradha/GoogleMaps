@@ -1,29 +1,31 @@
 // var apiKey = require('./../.env').apiKey;
 
-var createMap = function(cityInput) {
+var createMap = function(originInput, destinationInput) {
   // Draw map based on default location
   var map = new google.maps.Map(document.getElementById("showMap"), {
-    center: {lat: -34.397, lng: 150.644}, //Default location
+    center: {lat: 45.5207049, lng: -122.6795911}, //Default location at Epicodus
     scrollwheel: false,
     zoom: 16
   });
   // Update center of map based on inputted city name
   var geocoder = new google.maps.Geocoder();
-  geocoder.geocode( {"address": cityInput}, function(results, status) {
+  geocoder.geocode( {"address": originInput}, {"address": destinationInput},function(results, status) {
+console.log(originInput);
+console.log(destinationInput);
     if (status === "OK") {
-      map.setCenter(results[0].geometry.location);
+      map.setCenter(originInput);
       var marker = new google.maps.Marker({
         map: map,
-        position: results[0].geometry.location
+        position: {lat: originInput.coords.latitude, lng: originInput.coords.longitude}
       });
     } else {
       alert("Geocode was not successful for the following reason: " + status);
     }
   });
   var request = {
-    destination: {lat: 39.79, lng: -86.14},
-    origin: cityInput,
-    travelMode: "DRIVING"
+    destination: destinationInput,
+    origin: originInput,
+    travelMode: "WALKING"
   };
   var directionsDisplay = new google.maps.DirectionsRenderer({
     map: map
