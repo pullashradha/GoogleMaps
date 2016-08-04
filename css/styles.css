@@ -1,3 +1,23 @@
+body {
+  font-family: serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50pt;
+}
+
+form {
+  margin-top: 75px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#submit-btn {
+  font-size: 15pt;
+  margin-bottom: 75px;
+}
+
 #showMap {
   width: 100%;
   height: 500px;
